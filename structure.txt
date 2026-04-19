@@ -1,0 +1,30 @@
+Agentic-RAG-Pro/
+├── .env                # Variables d'environnement (API Keys par défaut)
+├── requirements.txt    # Dépendances (langchain, streamlit, chromadb, etc.)
+├── main.py             # Point d'entrée de l'application Streamlit
+│
+├── src/                # Code source logique
+│   ├── __init__.py
+│   ├── config.py       # Gestion des paramètres et des clés API
+│   ├── document_loader.py  # Logique de chargement et découpage des PDF
+│   ├── embedding_model.py  # Configuration de BAAI/bge-m3
+│   ├── vector_store.py     # Gestion de ChromaDB (Créer, Réinitialiser, Rechercher)
+│   ├── llm_factory.py      # Gestionnaire pour switcher entre OpenAI et OpenSource
+│   └── chains.py           # Définition des chaînes LangChain (RAG, Chat History)
+│
+├── data/               # Dossiers pour le stockage local
+│   ├── raw_docs/       # Fichiers PDF téléchargés
+│   └── chroma_db/      # Persistance de la base vectorielle Chroma
+│
+├── ui/                 # Composants de l'interface Streamlit
+│   ├── sidebar.py      # Configuration des API Keys et choix du modèle
+│   ├── uploader.py     # Interface de téléchargement de fichiers
+│   └── chat.py         # Interface de discussion LLM
+│
+└── tests/              # (Optionnel) Tests unitaires pour la logique RAG
+
+Model utilisé : 
+ - gemma4:e4b 
+ - gemma4:31b-cloud
+- openAI api 
+- Gemini 1.5 Flash API gratuite
